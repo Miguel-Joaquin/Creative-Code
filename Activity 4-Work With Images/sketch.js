@@ -1,22 +1,20 @@
 var img, x, y;
 function preload() {
-img = loadImage("Frame 12 copy.png");
+img = loadImage("Frame 8 copy.png");
 }
 
 function setup() {
-createCanvas (500, 1000);
+createCanvas (1000, 1000);
 background(0);
 noStroke();
+frameRate(300);
 }
 
 function draw() {
-background(0);
-x = mouseX;
-y = mouseY;
-
-image(img, 0, img.height/2, img.width/2, img.height/2);
-var c = get(x, y);
-fill(c);
-ellipse (x, y, 100, 100);
+  for (let i = 0; i < 100; i++)
+x = random(width);
+y = random(height);
+var c = img.get(x, y);
+fill(c[0], c[1], c[2], 50); 
+ellipse (x, y, 30, 30);
 }
-
